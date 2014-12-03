@@ -1,0 +1,19 @@
+production:
+  cache: 'McCache'
+  logger: 'SdkLogger.logger'
+
+local:
+  cache: 'McCache'
+  logger: 'SdkLogger.logger'
+
+stage:
+  cache: 'McCache'
+  logger: 'SdkLogger.logger'
+
+development:
+  cache: 'McCache'
+  logger: 'SdkLogger.logger'
+
+test:
+  cache: 'McCache'
+  logger: 'SdkLogger.logger'

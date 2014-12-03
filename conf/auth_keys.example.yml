@@ -1,0 +1,25 @@
+local:
+  consumer_key: YOUR_CONSUMER_KEY
+  consumer_secret: YOUR_CONSUMER_SECRET
+  url: https://developer-dev.api.autodesk.com/authentication/v1/authenticate
+
+development:
+  consumer_key: YOUR_CONSUMER_KEY
+  consumer_secret: YOUR_CONSUMER_SECRET
+  url: https://developer-dev.api.autodesk.com/authentication/v1/authenticate
+
+test:
+  consumer_key: YOUR_CONSUMER_KEY
+  consumer_secret: YOUR_CONSUMER_SECRET
+  url: https://developer-dev.api.autodesk.com/authentication/v1/authenticate
+
+stage:
+  consumer_key: YOUR_CONSUMER_KEY
+  consumer_secret: YOUR_CONSUMER_SECRET
+  url: https://developer-stg.api.autodesk.com/authentication/v1/authenticate
+
+production:
+  consumer_key: YOUR_CONSUMER_KEY
+  consumer_secret: YOUR_CONSUMER_SECRET
+  url: https://developer.api.autodesk.com/authentication/v1/authenticate
+

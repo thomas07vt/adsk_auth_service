@@ -9,13 +9,12 @@ class AuthService
     end
 
     def oauth_token
-       @@token_data ||= ActiveSupport::JSON.decode(
-          NetUtil.call_webservices(@@config['url'], 
-            'post', 
-            "client_id=#{@@config['consumer_key']}&client_secret=#{@@config['consumer_secret']}&grant_type=client_credentials", 
-            { headers: {'Content-Type' => 'application/x-www-form-urlencoded'} }).body
-        )
-     
+      ActiveSupport::JSON.decode(
+        NetUtil.call_webservices(@@config['url'], 
+          'post', 
+          "client_id=#{@@config['consumer_key']}&client_secret=#{@@config['consumer_secret']}&grant_type=client_credentials", 
+          { headers: {'Content-Type' => 'application/x-www-form-urlencoded'} }).body
+      )
     end
 
   end

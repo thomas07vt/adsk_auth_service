@@ -45,15 +45,4 @@ Then you can use `AuthService.oauth_token` within **irb**.<br/>
 **AuthService.oauth_token** calls the API server all the time to get the token. Each token will be expired around 30 minutes - 1 hour.<br/>
 You should consider about caching the token to reuse within expiration limit, instead of calling **AuthService.oauth_token** everytime when you need a token.<br/>
 
-### Built-in cache support (Optional - you don't have to care, if you don't want to use cache)
-This gem comes with built-in [**memcached**](http://memcached.org/)  and [**Zookeeper**](http://zookeeper.apache.org) support.
-Please see the gem [**CacheService**](https://github.com/linhchauatl/cache_service) to see how to configure your zookeeper or your memcached to be used with TokenCacheService service.
-
-Then within your code, you can call:
-```
-TokenCacheService.get_token
-```
-[**TokenCacheService**](https://github.com/linhchauatl/adsk_auth_service/blob/master/lib/services/token_cache_service.rb) automatically handles caching token and token expiration.
-
-The file **cache_config.yml** must be put in the directory **conf** or **config** of your own application to take effect.
 

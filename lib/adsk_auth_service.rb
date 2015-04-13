@@ -1,5 +1,5 @@
 require 'yaml'
-require 'cache_service'
+require 'config_service'
 
 def load_gem_lib(sub_path)
   spec = Gem::Specification.find_by_name('adsk_auth_service')

@@ -21,13 +21,13 @@ class NetUtil
     rescue StandardError => error
       try_time += 1
       if try_time > RETRY_TIMES
-        SdkLogger.logger.error("\n#{Time.now} Unrecoverable error in NetUtil.call_webservices: "\
+        puts ("\n#{Time.now} Unrecoverable error in NetUtil.call_webservices: "\
                                    "#{error}\n#{error.backtrace.join("\n")}\n")
         # It is an unrecoverable error, throw the exception back, don't suppress it.
         raise "Unrecoverable error calling web services.\nURL: #{url}.\nError message: #{error.message}." 
       end
       
-      SdkLogger.logger.error("NetUtil.call_webservices #{url}:\nError happens: #{error}. Try #{try_time} time(s).")
+      puts ("NetUtil.call_webservices #{url}:\nError happens: #{error}. Try #{try_time} time(s).")
       sleep(WAIT_TIME)
       retry
     end

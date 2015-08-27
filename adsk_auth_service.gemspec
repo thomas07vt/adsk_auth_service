@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'adsk_oauth_service'
-  s.version     = '1.0.21'
+  s.version     = '1.0.50'
   s.summary     = "Autodesk second phase token retrieval"
   s.description = "A gem for Autodesk 2-phase authentication service."
   s.authors     = ['Linh Chau', 'John Thomas']

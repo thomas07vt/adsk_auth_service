@@ -1,7 +1,7 @@
 require 'rspec'
 require 'yaml'
 
-require_relative '../lib/adsk_auth_service'
+require_relative '../lib/adsk_oauth_service'
 
 ENV['RACK_ENV'] = 'test'
 

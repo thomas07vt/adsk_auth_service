@@ -5,7 +5,8 @@ require_relative '../utils/net_util'
 class AuthService
   class << self
     def load_config
-      @@config ||= ConfigService.load_config('auth_keys.yml')[ConfigService.environment] rescue {}
+      @@config ||= (ConfigService.load_config('auth_keys.yml')[ConfigService.environment] rescue {})
+      @@config
     end
 
     def set_config(options = {})
@@ -24,7 +25,7 @@ class AuthService
       ActiveSupport::JSON.decode(
         NetUtil.call_webservices(url,
           'post',
-          "client_id=#{key}&client_secret=#{secret}&grant_type=client_credentials", 
+          "client_id=#{key}&client_secret=#{secret}&grant_type=client_credentials",
           { headers: {'Content-Type' => 'application/x-www-form-urlencoded'} }).body
       )
     end

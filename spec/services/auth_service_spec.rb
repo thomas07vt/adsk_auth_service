@@ -5,7 +5,7 @@ describe AuthService do
     it 'load config from YAML file' do
       config = AuthService.load_config
       expect(config).not_to be_nil
-      expect(config.is_a? Hash).to eql(true)
+      expect(config.is_a?(OpenStruct)).to eql(true)
     end
   end
 
@@ -13,8 +13,6 @@ describe AuthService do
   context 'oauth_token' do
     it 'returns auth token' do
       token_data = AuthService.oauth_token
-  
-      # token_data['access_token'] is the real token
       expect(token_data).not_to be_nil
       expect(token_data.is_a? Hash).to eql(true)
       expect(token_data['token_type']).not_to be_nil
@@ -27,7 +25,7 @@ describe AuthService do
     before do
       @orig_config = AuthService.load_config
     end
-    
+
     after(:all) do
       AuthService.set_config(@orig_config)
     end

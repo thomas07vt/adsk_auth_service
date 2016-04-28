@@ -1,6 +1,5 @@
-require 'active_support'
-require 'active_support/core_ext'
 require_relative '../utils/net_util'
+require 'json'
 
 class AuthService
   class << self
@@ -22,11 +21,13 @@ class AuthService
       key     = options['consumer_key']     || @@config['consumer_key']
       secret  = options['consumer_secret']  || @@config['consumer_secret']
 
-      ActiveSupport::JSON.decode(
-        NetUtil.call_webservices(url,
+      JSON.parse(
+        NetUtil.call_webservices(
+          url,
           'post',
           "client_id=#{key}&client_secret=#{secret}&grant_type=client_credentials",
-          { headers: {'Content-Type' => 'application/x-www-form-urlencoded'} }).body
+          { headers: {'Content-Type' => 'application/x-www-form-urlencoded'} }
+        ).body
       )
     end
 
@@ -34,3 +35,4 @@ class AuthService
 
   load_config
 end
+

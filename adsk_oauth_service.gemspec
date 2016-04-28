@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.summary     = "Autodesk second phase token retrieval"
   s.description = "A gem for Autodesk 2-phase authentication service."
   s.authors     = ['Linh Chau', 'John Thomas']
-  s.email       = 'thomas07vt@gmail.com'
+  s.email       = 'thomas07@vt.edu'
   s.files       = [
                     './Gemfile', './adsk_oauth_service.gemspec',
                     'lib/adsk_oauth_service.rb',
@@ -17,3 +17,4 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec', '~> 3.1'
 end
+

@@ -1,5 +1,4 @@
 require 'net/https'
-require 'active_support'
 
 class NetUtil
   READ_TIMEOUT = 600 # 10 minutes
